@@ -90,7 +90,7 @@ nature of the problem description.
 3. **Sanic has the flexibility** to support different kinds of data solutions, if the decision
 was made in the future to persist data.  I chose not to use a datastore here, because it wasn't necessary
 given the specifications (this service is only meant to re-direct data, not necessarily store it.  It would
-be more expensive, in dollars, if we did!).  However, Sanic works well with a relational solution,
+be more expensive, in dollars, if we did!).  However, Sanic works equally well with a relational solution,
 as well as a more highly-available NoSQL solution (which could be appropriate for JSON email
 data, as shown here.)
 4. **Sanic supports fast, asynchronous calls** for Python 3.6+.  This seemed to work well with the
@@ -103,8 +103,8 @@ It is worthwhile to note a couple of things:
 benefit from a message queueing technology, to scale up performance even further.  There are a
 number of cloud solutions and technologies to solve for this.
 2. The service does represent a "single point of failure" in the sense that even if either Spendgrid or
-Snailgun goes down, there is still the possibility that this service itself could go offline (hopefully no one trips over the power cord).  
-To mitigate this risk, we could introduce some redundancy into our architecture, if we perceive this to be a risk.
+Snailgun goes down, there is still the possibility that this service itself could go offline (hopefully no one trips over the power cord).
+We could introduce some redundancy into our architecture, if we perceive this to be a risk.
 3. Importantly, in developing this project, I took a short-cut by including the relevant API keys in the code
 base itself.  **This is a major security issue!!**  Given the time constraint and the fact that the APIs are very
 likely to be for practice, I decided that this would be a safe choice.  However, it is very important to note
@@ -115,7 +115,7 @@ in this way.
 4. I could have organized the code a little bit better.  In a real production app, we would have directories for
 "tests", "configurations" and the like.  It turned out that Python's imports seem to have changed with the latest
 version of Python 3, and I didn't have the time to investigate why certain module imports were failing.  Since
-the service rests on only six files, I thought that it wouldn't be too unorganized to include everything in one
+the service rests on only seven small files, I thought that it wouldn't be too unorganized to include everything in one
 directory, although, in production this would look very different.
 5. In writing the data schema, I elected to use a different key attribute than the word "from", which makes sense
 given an email, but is actually a protected word in the Python language!  Therefore, additional logic needed to be
@@ -128,7 +128,7 @@ There are a number of action items to consider before moving this application in
 1. **Unit/Integration Tests -** the Email API comes with a file where even more unit tests and integration tests could be written.  There are a number of test cases to write before this app would be
 safely ready for a production environment.
 
-2. **Security -** Will the emails passing through the Email API have PII in them?  Is there a risk of some nefarious sniffing around the Email Service?  We could, and should, certainly
+2. **Security -** Will the emails passing through the Email API have PII (personal information) in them?  Is there a risk of some nefarious sniffing around the Email Service?  We could, and should, certainly
 weigh all possible security risks before moving this into production.
 
 3. **Environment Configurations -** the Email API is only configured to work on a local machine at this
