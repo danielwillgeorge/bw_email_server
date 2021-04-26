@@ -1,7 +1,7 @@
 """
     FILE: sanity_check
     ------------------
-    This program implements unit tests for the
+    This program implements unit and integration tests for the
     Brightwheel Email Server API.
 """
 
