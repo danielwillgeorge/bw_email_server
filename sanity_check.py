@@ -14,6 +14,10 @@ from api import app
 import config
 
 
+# CONSTANTS
+# ---------
+HTTP_OK, HTTP_CREATED, HTTP_CLIENT_ERROR = 200, 201, 404
+
 class BasicTestSuite(unittest.TestCase):
     body = {"to": "susan@abcpreschool.org",
                 "to_name": "Miss Susan",
@@ -31,20 +35,20 @@ class BasicTestSuite(unittest.TestCase):
     # Test that the landing page returns an HTTP OK code when invoked.
     def test_index_returns_200(self):
         request, response = app.test_client.get("/")
-        assert response.status == 200
+        assert response.status == HTTP_OK
 
     # Test HTTP Client Error if passed too many fields.
     def test_too_many_email_fields(self):
         data = self.body
         data["unecessary_field"] = "123"
         request, response = app.test_client.post('/email', data=json.dumps(data))
-        assert response.status == 404
+        assert response.status == HTTP_CLIENT_ERROR
 
     # Test HTTP Client Error if passed no fields.
     def test_no_email_fields(self):
         data = {}
         request, response = app.test_client.post('/email', data=json.dumps(data))
-        assert response.status == 404
+        assert response.status == HTTP_CLIENT_ERROR
 
     # Test success when Spendgrid endpoint invoked.
     def test_success_sendgrid(self):
@@ -54,7 +58,7 @@ class BasicTestSuite(unittest.TestCase):
             headers = {'content-type': "application/json", 'x-api-key': self.spendgrid_api_key}
             data = self.body
             request, response = app.test_client.post('/email', data=json.dumps(data), headers=headers)
-            assert response.status == 201
+            assert response.status == HTTP_CREATED
 
     # Test success when Snailgun endpoint invoked, meaning that the email has
     # either been sent, or is queued up to be sent.
