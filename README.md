@@ -61,7 +61,9 @@ The module `bwemail.py` (for "Brightwheel Email") is used to parse arguments on 
 
 Additionally, feel free to run the test suite, in the `sanity_check.py` file, by entering the following command from the
 same terminal as your virtual environment.  As a note, if you attempt to run tests from outside the virtual environment,
-you will see a Python "ModuleNotFoundError".  Additionally, if you wish, you can adjust the 3rd-party API from "SPENDGRID" to
+you will see a Python "ModuleNotFoundError".
+
+Finally, if you wish, you can adjust the 3rd-party API from "SPENDGRID" to
 "SNAILGUN" in `config.py`, and run tests, without needing to re-start the server.  Run the tests with this command:
 
 ```
