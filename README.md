@@ -4,7 +4,18 @@ Hello!  Welcome to the Brightwheel Email Server API.  This API provides an easy 
 to direct email traffic to one of two 3rd-party email services; namely, Spendgrid and
 Snailgun.
 
-## Getting Started
+## File Structure
+
+The Brightwheel Email Server API is lightweight, and consists of the following source code files:
+
+1. api.py - the core server logic for the service.
+2. bwemail.py - an argument-parsing utility to invoke the API from the command line.
+3. config.py - configuration variables relevant to the API.
+4. models.py - the models governing the data schema.
+5. sanity_check.py - "sanity" tests of the API.
+6. utils.py - utility functions for the API.
+
+## Getting Started/Walkthrough
 
 To get started using the API, first `git clone` this repository.  Then, make sure
 that you have Python 3.6 or greater installed on your computer (this will also ensure
