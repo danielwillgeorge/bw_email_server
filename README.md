@@ -12,7 +12,7 @@ The Brightwheel Email Server API is lightweight, and consists of the following s
 2. bwemail.py - an argument-parsing utility to invoke the API from the command line.
 3. config.py - configuration variables relevant to the API.
 4. models.py - the models governing the data schema.
-5. sanity_check.py - "sanity" tests of the API.
+5. sanity_check.py - "sanity" unit and integration tests of the API.
 6. utils.py - utility functions for the API.
 
 ## Getting Started/Walkthrough
@@ -121,7 +121,7 @@ base itself.  **This is a major security issue!!**  Given the time constraint an
 likely to be for practice, I decided that this would be a safe choice.  However, it is very important to note
 that if this were the real thing, we would need to use Amazon's Key Management Store (KMS), Gitlab/Github's secure
 environment variables support, or another such solution.  I chose to use argument parsing on the command
-line as much as possible, to keep API Keys out of the code base, although I was blocked when trying to write unit tests
+line as much as possible, to keep API Keys out of the code base, although I was blocked when trying to write unit and integration tests
 in this way.  In hindsight, I could have included these keys as environment variables, which would probably have been more elegant.
 4. I could have organized the code a little bit better.  In a real production app, we would have directories for
 "tests", "configurations" and the like.  It turned out that Python's imports seem to have changed with the latest
