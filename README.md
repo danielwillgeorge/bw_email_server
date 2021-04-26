@@ -109,7 +109,7 @@ We could introduce some redundancy into our architecture, if we perceive this to
 base itself.  **This is a major security issue!!**  Given the time constraint and the fact that the APIs are very
 likely to be for practice, I decided that this would be a safe choice.  However, it is very important to note
 that if this were the real thing, we would need to use Amazon's Key Management Store (KMS), Gitlab/Github's secure
-environment variables support, or another such solution.  I did choose to use argument parsing on the command
+environment variables support, or another such solution.  I chose to use argument parsing on the command
 line as much as possible, to keep API Keys out of the code base, although I was blocked when trying to write unit tests
 in this way.
 4. I could have organized the code a little bit better.  In a real production app, we would have directories for
