@@ -1,7 +1,7 @@
 # Brightwheel Email Server API Demo
 
 Hello!  Welcome to the Brightwheel Email Server API.  This API provides an easy way
-to direct email traffic to one of two 3rd-party email services; namely, Sendgrid and
+to direct email traffic to one of two 3rd-party email services; namely, Spendgrid and
 Snailgun.
 
 ## Getting Started
@@ -100,7 +100,7 @@ It is worthwhile to note a couple of things:
 1. Even though Sanic is a fast, asynchronous and light microframework, this type of server would
 benefit from a message queueing technology, to scale up performance even further.  There are a
 number of cloud solutions and technologies to solve for this.
-2. The service does represent a "single point of failure" in the sense that even if either Sendgrid or
+2. The service does represent a "single point of failure" in the sense that even if either Spendgrid or
 Snailgun goes down, there is still the possibility that this service itself could go offline (hopefully no one trips over the power cord).  
 To mitigate this risk, we could introduce some redundancy into our architecture, if we perceive this to be a risk.
 3. Importantly, in developing this project, I took a short-cut by including the relevant API keys in the code
