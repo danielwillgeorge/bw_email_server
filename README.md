@@ -4,7 +4,7 @@ Hello!  Welcome to the Brightwheel Email Server API.  This API provides an easy 
 to direct email traffic to one of two 3rd-party email services; namely, Spendgrid and
 Snailgun.
 
-## File Structure
+## Project Structure
 
 The Brightwheel Email Server API is lightweight, and consists of the following source code files:
 
