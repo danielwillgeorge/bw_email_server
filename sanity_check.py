@@ -15,19 +15,18 @@ import config
 
 
 class BasicTestSuite(unittest.TestCase):
-    def __init__(self):
-        self.body = {"to": "susan@abcpreschool.org",
+    body = {"to": "susan@abcpreschool.org",
                 "to_name": "Miss Susan",
                 "from": "noreply@mybrightwheel.com",
                 "from_name": "brightwheel",
                 "subject": "Your Weekly Report",
                 "body": "<h1>Weekly Report</h1><p>You saved 10 hours this week!</p>"}
 
-        # THIS IS VERY BAD PRACTICE!!!  Including here in this test file for
-        # time.  Fix is to use argparse with unittest so that this key can
-        # be entered on the command line or use storage like AWS KMS or the like.
-        self.spendgrid_api_key = "api_key_S0Uem3G0qIDeLfIptWhcVlPv"
-        self.snailgun_api_key = "api_key_Dn2Dn3SdUEEriy4mPjK6VZNS"
+    # THIS IS VERY BAD PRACTICE!!!  Including here in this test file for
+    # time.  Fix is to use argparse with unittest so that this key can
+    # be entered on the command line or use storage like AWS KMS or the like.
+    spendgrid_api_key = "api_key_S0Uem3G0qIDeLfIptWhcVlPv"
+    snailgun_api_key = "api_key_Dn2Dn3SdUEEriy4mPjK6VZNS"
 
     # Test that the landing page returns an HTTP OK code when invoked.
     def test_index_returns_200(self):
