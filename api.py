@@ -10,9 +10,9 @@ import config
 from utils import validate_email_fields
 
 from bs4 import BeautifulSoup
+import requests
 from sanic import Sanic
 from sanic import response
-import requests
 
 
 # CONSTANTS
