@@ -87,7 +87,7 @@ Also, you can change the targeted 3rd-party service in the file `config.py` by a
 
 ## High-Level Engineering and Design
 
-The Data API was developed using the Sanic microframework in Python.  I used Python because it is a language
+The Email API was developed using the Sanic microframework in Python.  I used Python because it is a language
 I am familiar with, and I knew about the server technology Sanic, as well.  Sanic is similar to Flask, another
 well-known microframework, but has support for asynchronous calls, which I judged would be useful
 given the specifications.  Python in general is quick to develop (another reason I elected to use it here), but
