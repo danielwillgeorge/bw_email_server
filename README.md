@@ -48,7 +48,10 @@ you can navigate to this url in your browser: http://127.0.0.1:8000/
 
 To invoke the relevant endpoints in the service, open another window or tab in your
 command line, and enter the following command, providing your API Key for the relevant
-service, as well as an email body in JSON format:
+service, as well as an email body in JSON format.  Please note that, by default, the
+app is set to direct emails to the Spendgrid service, so if you are following this
+walkthrough, you should provide your API key for that service when entering the following
+command:
 
 ```
 python bwemail.py -b '{"to": "susan@abcpreschool.org", "to_name": "Miss Susan", "from": "noreply@mybrightwheel.com", "from_name": "brightwheel", "subject": "Your Weekly Report", "body": "<h1>Weekly Report</h1><p>You saved 10 hours this week!</p>"}' -k "YOUR_API_KEY_IN_QUOTES"
@@ -56,7 +59,10 @@ python bwemail.py -b '{"to": "susan@abcpreschool.org", "to_name": "Miss Susan", 
 
 The module `bwemail.py` (for "Brightwheel Email") is used to parse arguments on the command line.  The argument `-b` corresponds with the body of JSON, and the argument `-k` corresponds with your API Key.
 
-Additionally, feel free to run the test suite, in the `sanity_check.py` file, by entering the following command:
+Additionally, feel free to run the test suite, in the `sanity_check.py` file, by entering the following command from the
+same terminal as your virtual environment.  As a note, if you attempt to run tests from outside the virtual environment,
+you will see a Python "ModuleNotFoundError".  Additionally, if you wish, you can adjust the 3rd-party API from "SPENDGRID" to
+"SNAILGUN" in `config.py`, and run tests, without needing to re-start the server.  Run the tests with this command:
 
 ```
 python sanity_check.py
